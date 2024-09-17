@@ -1,18 +1,27 @@
-﻿DateTime startDate = DateTime.ParseExact(Console.ReadLine(),
-            "d.M.yyyy", CultureInfo.InvariantCulture);
-DateTime endDate = DateTime.ParseExact(Console.ReadLine(),
-            "d.M.yyyy", CultureInfo.InvariantCulture);
+﻿using System;
 
-int holidaysCount = 0;
-
-for (DateTime date = startDate; date <= endDate; date = date.AddDays(1))
+public class Class1
 {
-    if (date.DayOfWeek == DayOfWeek.Saturday ||
-        date.DayOfWeek == DayOfWeek.Sunday)
+    public Class1()
     {
+        DateTime startDate = DateTime.ParseExact(Console.ReadLine(),
+                    "d.M.yyyy", CultureInfo.InvariantCulture);
+        DateTime endDate = DateTime.ParseExact(Console.ReadLine(),
+                    "d.M.yyyy", CultureInfo.InvariantCulture);
 
-        holidaysCount++;
+        int holidaysCount = 0;
+
+        for (DateTime date = startDate; date <= endDate; date = date.AddDays(1))
+        {
+            if (date.DayOfWeek == DayOfWeek.Saturday ||
+                date.DayOfWeek == DayOfWeek.Sunday)
+            {
+
+                holidaysCount++;
+            }
+        }
+
+        Console.WriteLine(holidaysCount);
     }
 }
 
-Console.WriteLine(holidaysCount);

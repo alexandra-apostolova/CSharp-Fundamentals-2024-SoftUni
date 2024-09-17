@@ -1,15 +1,24 @@
-﻿int hoursInput = int.Parse(Console.ReadLine());
-int minutesInput = int.Parse(Console.ReadLine());
+﻿using System;
 
-int timeInMinutes = minutesInput + (hoursInput * 60);
+public class Class1
+{
+    public Class1()
+    {
+        int hoursInput = int.Parse(Console.ReadLine());
+        int minutesInput = int.Parse(Console.ReadLine());
 
-int finalTime = timeInMinutes + 30;
+        int timeInMinutes = minutesInput + (hoursInput * 60);
 
-int hours = finalTime / 60;
-int minutes = finalTime % 60;
+        int finalTime = timeInMinutes + 30;
 
-if (hours >= 24)
-    hours = 0;
+        int hours = finalTime / 60;
+        int minutes = finalTime % 60;
 
-Console.WriteLine($"{hours}:{minutes:d2}");
+        if (hours >= 24)
+            hours = 0;
+
+        Console.WriteLine($"{hours}:{minutes:d2}");
+    }
+}
+
 
